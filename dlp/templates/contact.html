@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Contact · DigiLiteracy{% endblock %}
+{% block content %}
+<section class="container">
+  <h2 class="section-title">Get in Touch</h2>
+  <p class="section-sub">Questions, feedback, or collaboration ideas? Send us a message.</p>
+  <form class="form fade-in" method="post" action="{{ url_for('contact') }}">
+    {% if success %}<div class="alert alert-success">✓ Thank you! Your message has been saved.</div>{% endif %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required maxlength="80">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required maxlength="120">
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required maxlength="1000"></textarea>
+    </div>
+    <button class="btn" type="submit">Send Message →</button>
+  </form>
+</section>
+{% endblock %}

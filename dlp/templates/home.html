@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="hero-inner fade-in">
+    <h1>Empower Yourself with Digital Skills</h1>
+    <p>Learn the essentials of the internet, online safety, digital payments and more — through simple modules, an interactive quiz, and a free certificate of completion.</p>
+    <a class="cta" href="{{ url_for('modules') }}">🚀 Start Learning</a>
+  </div>
+</section>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat"><div class="stat-num" data-count="{{ stats.modules }}">0</div><div class="stat-label">Training Modules</div></div>
+    <div class="stat"><div class="stat-num" data-count="1200" data-suffix="+">0</div><div class="stat-label">Learners Trained</div></div>
+    <div class="stat"><div class="stat-num" data-count="{{ stats.questions }}">0</div><div class="stat-label">Quiz Questions</div></div>
+  </div>
+</div>
+
+<section class="container">
+  <h2 class="section-title">Why Digital Literacy?</h2>
+  <p class="section-sub">In today's connected world, digital skills are as essential as reading and writing. This program helps everyday users become confident, safe, and self-reliant online.</p>
+  <div class="grid">
+    <div class="card"><div class="card-icon">📚</div><h3>Structured Modules</h3><p>Six bite-sized modules covering everything from browsing to banking.</p></div>
+    <div class="card"><div class="card-icon">🧠</div><h3>Interactive Quiz</h3><p>Test your knowledge with 10 multiple-choice questions and instant scoring.</p></div>
+    <div class="card"><div class="card-icon">🏆</div><h3>Free Certificate</h3><p>Pass the quiz and download a personalised certificate to share or print.</p></div>
+  </div>
+</section>
+{% endblock %}

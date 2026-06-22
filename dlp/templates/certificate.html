@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Certificate · {{ name }}{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="cert fade-in">
+    <div class="seal">🏆</div>
+    <div class="sub">Certificate of Completion</div>
+    <h1>Digital Literacy Training Program</h1>
+    <p style="color:var(--muted);margin-top:.5rem">This is to certify that</p>
+    <div class="name">{{ name }}</div>
+    <p class="desc">has successfully completed the Digital Literacy Training Program with a score of
+      <strong>{{ score }} / {{ total }}</strong>, demonstrating proficiency in essential digital skills
+      including online safety, digital payments, and government digital services.</p>
+    <div class="cert-meta">
+      <div>📅 {{ date }}</div>
+      <div>✍ Community Service Project</div>
+    </div>
+  </div>
+  <div style="text-align:center;margin:1.5rem 0 3rem" class="no-print">
+    <button class="btn" onclick="window.print()">⬇ Download / Print Certificate</button>
+    <a class="btn btn-outline" href="{{ url_for('home') }}" style="margin-left:.5rem">Home</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Question {{ idx+1 }} · Quiz{% endblock %}
+{% block content %}
+<section class="container">
+  <div class="quiz-card fade-in">
+    <div class="progress"><div class="progress-bar" style="width:{{ ((idx)/total*100)|round(0) }}%"></div></div>
+    <p style="color:var(--muted);font-size:.9rem;margin-bottom:.4rem">Question {{ idx+1 }} of {{ total }}</p>
+    <div class="quiz-q">{{ q.q }}</div>
+    <form method="post" action="{{ url_for('quiz_question') }}">
+      <div class="options">
+        {% for opt in q.options %}
+        <label class="option">
+          <input type="radio" name="answer" value="{{ loop.index0 }}" required>
+          <span>{{ opt }}</span>
+        </label>
+        {% endfor %}
+      </div>
+      <button class="btn" type="submit">{{ 'Finish Quiz' if idx+1 == total else 'Next Question →' }}</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

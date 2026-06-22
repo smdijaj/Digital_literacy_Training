@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{% block title %}Digital Literacy Training Program{% endblock %}</title>
+  <meta name="description" content="Free digital literacy training: internet, email, cyber safety, UPI, social media & government services." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="{{ url_for('home') }}">
+      <span class="brand-badge">🎓</span> DigiLiteracy
+    </a>
+    <button class="burger" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      {% set page = request.endpoint %}
+      <li><a class="{{ 'active' if page=='home' }}" href="{{ url_for('home') }}">Home</a></li>
+      <li><a class="{{ 'active' if page=='modules' }}" href="{{ url_for('modules') }}">Modules</a></li>
+      <li><a class="{{ 'active' if 'quiz' in page }}" href="{{ url_for('quiz_start') }}">Quiz</a></li>
+      <li><a class="{{ 'active' if page=='resources' }}" href="{{ url_for('resources') }}">Resources</a></li>
+      <li><a class="{{ 'active' if page=='documentation' }}" href="{{ url_for('documentation') }}">Documentation</a></li>
+      <li><a class="{{ 'active' if page=='contact' }}" href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>{% block content %}{% endblock %}</main>
+
+<footer class="no-print">
+  <strong>Digital Literacy Training Program</strong>
+  A Community Service Project (CSP) · © 2026
+</footer>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

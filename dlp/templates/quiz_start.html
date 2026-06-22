@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Start Quiz · DigiLiteracy{% endblock %}
+{% block content %}
+<section class="container">
+  <h2 class="section-title">Digital Literacy Quiz</h2>
+  <p class="section-sub">{{ total }} questions · score 6 or more to earn your certificate.</p>
+  <form class="form fade-in" method="post" action="{{ url_for('quiz_start') }}">
+    <div class="form-group">
+      <label for="name">Your Full Name</label>
+      <input id="name" name="name" type="text" required maxlength="60" placeholder="e.g. Anita Sharma">
+    </div>
+    <button class="btn" type="submit">Begin Quiz →</button>
+  </form>
+</section>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Documentation · DigiLiteracy{% endblock %}
+{% block content %}
+<section class="container">
+  <h2 class="section-title">Project Documentation</h2>
+  <p class="section-sub">Complete reference for this Community Service Project.</p>
+  <div class="doc fade-in">
+    <h2>📄 Abstract</h2>
+    <p>The Digital Literacy Training Program is a web-based learning platform designed to bridge the digital divide by teaching essential digital skills to learners of all ages. Built as a Community Service Project (CSP), it offers structured modules, an interactive quiz, and a downloadable certificate.</p>
+
+    <h2>🎯 Objectives</h2>
+    <ul>
+      <li>Provide free, accessible digital literacy education.</li>
+      <li>Equip users with practical skills in browsing, email, online safety, UPI, and e-governance.</li>
+      <li>Assess learning through an interactive quiz.</li>
+      <li>Reward learners with a verifiable certificate.</li>
+      <li>Encourage safe and responsible use of technology.</li>
+    </ul>
+
+    <h2>✨ Features</h2>
+    <ul>
+      <li>Responsive home page with hero & statistics.</li>
+      <li>Six structured training modules.</li>
+      <li>10-question multiple-choice quiz with scoring & session tracking.</li>
+      <li>Automatic certificate generation for passed learners.</li>
+      <li>Contact form with SQLite database storage.</li>
+      <li>Curated resources page and full project documentation.</li>
+    </ul>
+
+    <h2>🛠 Technologies Used</h2>
+    <ul>
+      <li><strong>Backend:</strong> Python 3, Flask</li>
+      <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript (Vanilla)</li>
+      <li><strong>Database:</strong> SQLite</li>
+      <li><strong>Templating:</strong> Jinja2</li>
+      <li><strong>Deployment:</strong> Render.com (Gunicorn)</li>
+    </ul>
+
+    <h2>📁 Project Structure</h2>
+    <pre style="background:#f1f5f9;padding:1rem;border-radius:8px;overflow-x:auto;font-size:.85rem">app.py
+templates/   (Jinja2 HTML)
+static/css/  (style.css)
+static/js/   (main.js)
+database.db  (auto-created)
+requirements.txt
+Procfile</pre>
+
+    <h2>🏁 Conclusion</h2>
+    <p>This project demonstrates how a lightweight web stack can deliver meaningful social impact. By making digital literacy education free, interactive, and certifiable, the platform empowers learners to participate confidently in the digital economy — fulfilling the spirit of community service.</p>
+  </div>
+</section>
+{% endblock %}

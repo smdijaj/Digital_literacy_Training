@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Training Modules · DigiLiteracy{% endblock %}
+{% block content %}
+<section class="container">
+  <h2 class="section-title">Training Modules</h2>
+  <p class="section-sub">Six focused modules to build practical digital skills from the ground up.</p>
+  <div class="grid">
+    {% for m in modules %}
+    <div class="card fade-in">
+      <div class="card-icon">{{ m.icon }}</div>
+      <h3>{{ m.title }}</h3>
+      <p>{{ m.desc }}</p>
+      <ul>
+        {% for p in m.points %}<li>{{ p }}</li>{% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+  <div style="text-align:center;margin-top:2.5rem">
+    <a href="{{ url_for('quiz_start') }}" class="btn">Take the Quiz →</a>
+  </div>
+</section>
+{% endblock %}

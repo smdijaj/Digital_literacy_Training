@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Quiz Result · DigiLiteracy{% endblock %}
+{% block content %}
+<section class="container">
+  <div class="result fade-in">
+    <div class="score-ring" style="--p: {{ (score/total*360)|round(0) }}deg">
+      <span>{{ score }}/{{ total }}</span>
+    </div>
+    {% if passed %}
+      <div class="badge pass">✓ Passed</div>
+      <h2 style="margin-bottom:.4rem">Congratulations, {{ name }}!</h2>
+      <p style="color:var(--muted)">You've successfully completed the Digital Literacy training.</p>
+      <div style="margin-top:1.8rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
+        <a class="btn" href="{{ url_for('certificate') }}">🏆 View Certificate</a>
+        <a class="btn btn-outline" href="{{ url_for('quiz_start') }}">Retake Quiz</a>
+      </div>
+    {% else %}
+      <div class="badge fail">Not Passed</div>
+      <h2 style="margin-bottom:.4rem">Almost there, {{ name }}!</h2>
+      <p style="color:var(--muted)">You need at least 6 correct answers to pass. Review the modules and try again.</p>
+      <div style="margin-top:1.8rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap">
+        <a class="btn" href="{{ url_for('quiz_start') }}">Retake Quiz</a>
+        <a class="btn btn-outline" href="{{ url_for('modules') }}">Review Modules</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
