@@ -25,18 +25,18 @@ img{max-width:100%}
     gap:.6rem;
     font-weight:800;
     font-size:1.15rem;
-    color:#fa0afa;
+    color:white;
     transition:all .3s ease;
 }
 
 .brand:hover{
-    color:white;
+    color:#fa0afa;
     transform:scale(1.05);
 }
 .brand-badge{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
   background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;font-size:1.1rem}
 .nav-links{display:flex;gap:.25rem;list-style:none}
-.nav-links a{padding:.55rem .85rem;border-radius:8px;color:#fefbfb;font-weight:500;font-size:.95rem;transition:all .2s}
+.nav-links a{padding:.55rem .85rem;border-radius:8px;color:#00000;font-weight:500;font-size:.95rem;transition:all .2s}
 .nav-links a:hover,.nav-links a.active{background:#eff6ff;color:var(--primary);transform:translate(-3px)}
 .burger{
     display:none;
@@ -46,7 +46,7 @@ img{max-width:100%}
     padding:8px 10px;
     font-size:1.5rem;
     cursor:pointer;
-    color:#3508ff;
+    color:hsl(203, 100%, 52%);
     transition:.3s;
 }
 
